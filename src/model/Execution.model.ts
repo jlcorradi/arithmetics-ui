@@ -1,9 +1,9 @@
-export interface ExecutionRequest {
+export interface IExecutionRequest {
   type: string;
   params: number[];
 }
 
-export interface ExecutionResult {
+export interface IExecutionResult {
   id: number;
   date: string;
   description: string;

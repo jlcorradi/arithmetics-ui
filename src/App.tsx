@@ -1,6 +1,6 @@
 import { ArithmeticsLayout } from "./ArithmeticsLayout";
 import { BrowserRouter as Router } from "react-router-dom";
-import { GlobalStateProvider } from "./context/GlobalState";
+import { GlobalStateProvider } from "./context/GlobalState.context";
 
 function App() {
   return (

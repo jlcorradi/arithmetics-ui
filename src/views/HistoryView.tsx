@@ -1,11 +1,17 @@
-import { RecordStateProvider } from "../context/RecordsState";
+import { ExecutionResultFilterEditor } from "../components/ExecutionResultFilterEditor";
+import { ExecutionResultTable } from "../components/ExecutionResultTable";
+import { PageControlPanel } from "../components/PageControlPanel";
+import {
+  RecordStateProvider,
+} from "../context/RecordsState.context";
 
-export interface IHistoryViewProps {}
-
-export function HistoryView(props: IHistoryViewProps) {
+export function HistoryView() {
   return (
     <RecordStateProvider>
-      <h4 className="pt-3">Operation Execution History</h4>
+      <h4 className="pt-4 pb-4">Operation Execution History</h4>
+      <ExecutionResultFilterEditor></ExecutionResultFilterEditor>
+      <ExecutionResultTable></ExecutionResultTable>
+      <PageControlPanel></PageControlPanel>
     </RecordStateProvider>
   );
 }

@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
-import { Operation } from "../model/Operation.model";
+import { IOperation } from "../model/Operation.model";
 import http from "../Http";
 
 export interface IOperationDropboxProps {
-  onSelectOperation: (op: Operation) => void;
+  onSelectOperation: (op: IOperation) => void;
   selected?: string;
 }
 
 const OPERATIONS_V1 = "/api/v1/operations";
 
 export default function OperationDropbox(props: IOperationDropboxProps) {
-  const [operations, setOperations] = useState<Operation[]>([]);
+  const [operations, setOperations] = useState<IOperation[]>([]);
 
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await http.get<Operation[]>(OPERATIONS_V1);
+        const { data } = await http.get<IOperation[]>(OPERATIONS_V1);
         setOperations(data);
       } catch (error) {}
     })();

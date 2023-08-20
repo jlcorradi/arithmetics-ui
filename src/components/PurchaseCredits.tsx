@@ -1,6 +1,6 @@
 import { Dropdown } from "react-bootstrap";
 import http from "../Http";
-import { useGlobalState } from "../context/GlobalState";
+import { useGlobalState } from "../context/GlobalState.context";
 
 export interface IPurchaseBalanceProps {}
 
@@ -10,7 +10,7 @@ type PurchaseRequest = {
   amount: number;
 };
 
-export function PurchaseBalance(props: IPurchaseBalanceProps) {
+export function PurchaseBalance() {
   const amounts = [10, 20, 50, 100];
   const {
     actions: { updateUserData },

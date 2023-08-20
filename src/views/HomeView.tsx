@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { useGlobalState } from "../context/GlobalState";
+import { useGlobalState } from "../context/GlobalState.context";
 import { PurchaseBalance } from "../components/PurchaseCredits";
 
-export interface IHomeViewProps {}
-
-export function HomeView(props: IHomeViewProps) {
+export function HomeView() {
   const {
     state: { isLoggedIn, userData },
   } = useGlobalState();
@@ -15,7 +13,8 @@ export function HomeView(props: IHomeViewProps) {
         <div className="text-center">
           <h1>Hello, user!</h1>
           <p>
-            Your current credit is <strong className="text-primary">${userData?.userBalance}</strong>.
+            Your current credit is{" "}
+            <strong className="text-primary">${userData?.userBalance}</strong>.
           </p>
           <p>
             <PurchaseBalance></PurchaseBalance>

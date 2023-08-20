@@ -1,4 +1,4 @@
-export interface UserData {
+export interface IUserData {
   email: string,
   userBalance: string
 }

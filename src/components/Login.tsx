@@ -2,7 +2,7 @@ import { SyntheticEvent, useState } from "react";
 import { Badge, Button, Form } from "react-bootstrap";
 import http from "../Http";
 import { Auth } from "../Auth";
-import { useGlobalState } from "../context/GlobalState";
+import { useGlobalState } from "../context/GlobalState.context";
 import { useNavigate } from "react-router-dom";
 
 const AUTH_V1 = "/api/v1/auth";
@@ -11,9 +11,7 @@ type LoginResponse = {
   access_token: string;
 };
 
-export interface ILoginProps {}
-
-export function Login(props: ILoginProps) {
+export function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();

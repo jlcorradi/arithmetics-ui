@@ -1,7 +1,7 @@
-import { ExecutionResult } from "../model/Execution.model";
+import { IExecutionResult } from "../model/Execution.model";
 
 export interface IExecutionResultPanelProps {
-  results: ExecutionResult;
+  results: IExecutionResult;
 }
 
 export function ExecutionResultPanel({ results }: IExecutionResultPanelProps) {

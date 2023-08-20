@@ -3,11 +3,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import { Login } from "./Login";
-import { useGlobalState } from "../context/GlobalState";
+import { useGlobalState } from "../context/GlobalState.context";
 
-export interface ITopBarProps {}
-
-export function TopBar(props: ITopBarProps) {
+export function TopBar() {
   const {
     state: { isLoggedIn },
   } = useGlobalState();

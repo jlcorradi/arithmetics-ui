@@ -1,4 +1,4 @@
-export interface Operation {
+export interface IOperation {
   operationType: string;
   description: string;
   paramsQuantity: number;

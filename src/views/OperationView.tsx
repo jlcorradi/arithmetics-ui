@@ -5,9 +5,7 @@ import { SyntheticEvent, useState } from "react";
 import { Button, FormGroup, Spinner } from "react-bootstrap";
 import { ExecutionResultPanel } from "../components/ExecutionResultPanel";
 
-export interface IOperationViewProps {}
-
-export function OperationView(props: IOperationViewProps) {
+export function OperationView() {
   const { operation, setOperation, executionResult, busy, execute } =
     useExecuteOperation();
   const [param1, setParam1] = useState("");

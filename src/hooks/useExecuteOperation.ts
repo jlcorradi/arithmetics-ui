@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { Operation } from "../model/Operation.model";
+import { IOperation } from "../model/Operation.model";
 import http from "../Http";
-import { ExecutionRequest, ExecutionResult } from "../model/Execution.model";
-import { useGlobalState } from "../context/GlobalState";
+import { IExecutionRequest, IExecutionResult } from "../model/Execution.model";
+import { useGlobalState } from "../context/GlobalState.context";
 
 const EXECUTIONS_V1 = "/api/v1/executions";
 
 export const useExecuteOperation = () => {
-  const [operation, setOperation] = useState<Operation>(
-    {} as unknown as Operation
+  const [operation, setOperation] = useState<IOperation>(
+    {} as unknown as IOperation
   );
-  const [executionResult, setExecutionResult] = useState<ExecutionResult>(
-    {} as unknown as ExecutionResult
+  const [executionResult, setExecutionResult] = useState<IExecutionResult>(
+    {} as unknown as IExecutionResult
   );
   const [busy, setBusy] = useState(false);
   const {
@@ -21,11 +21,11 @@ export const useExecuteOperation = () => {
   async function execute(params: number[]) {
     setBusy(true);
     try {
-      let request: ExecutionRequest = {
+      let request: IExecutionRequest = {
         type: operation.operationType,
         params,
       };
-      const { data } = await http.post<ExecutionResult>(EXECUTIONS_V1, request);
+      const { data } = await http.post<IExecutionResult>(EXECUTIONS_V1, request);
 
       setExecutionResult(data);
       updateUserData();
