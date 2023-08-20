@@ -28,9 +28,9 @@ services:
       - 'JDBC_PASSWORD=s3cr3t'
 
   arithmetics-ui:
-    #build: .
-    image: public.ecr.aws/j3c6d5f6/arithmetics-ui:latest
+    build: .
+    #image: public.ecr.aws/j3c6d5f6/arithmetics-ui:latest
     depends_on:
       - 'arithmetics'
     ports:
-      - '80:80'
+      - '3000:80'
