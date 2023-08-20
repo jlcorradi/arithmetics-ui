@@ -1,11 +1,11 @@
-import { Spinner } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import { useRecordsContext } from "../context/RecordsState.context";
 import moment from "moment";
 
 export function ExecutionResultTable() {
   const {
     state: { records, order, isLoading },
-    actions: { setOrder },
+    actions: { setOrder, deleteRecord },
   } = useRecordsContext();
 
   function changeOrder(newOrder: string) {
@@ -47,6 +47,7 @@ export function ExecutionResultTable() {
             <th scope="col" onClick={() => changeOrder("userBalance")}>
               Balance
             </th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +59,15 @@ export function ExecutionResultTable() {
               <td>{record.result}</td>
               <td>${record.price}</td>
               <td>${record.userBalance}</td>
+              <td>
+                <Button
+                  size="sm"
+                  variant="link"
+                  onClick={(e) => deleteRecord(record)}
+                >
+                  Delete
+                </Button>
+              </td>
             </tr>
           ))}
         </tbody>

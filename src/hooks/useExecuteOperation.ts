@@ -4,7 +4,7 @@ import http from "../Http";
 import { IExecutionRequest, IExecutionResult } from "../model/Execution.model";
 import { useGlobalState } from "../context/GlobalState.context";
 
-const EXECUTIONS_V1 = "/api/v1/executions";
+const EXECUTIONS_V1 = "/api/v1/executions"; 
 
 export const useExecuteOperation = () => {
   const [operation, setOperation] = useState<IOperation>(

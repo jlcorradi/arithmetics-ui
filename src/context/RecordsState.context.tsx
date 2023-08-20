@@ -57,6 +57,16 @@ const useRecords = () => {
     }
   }
 
+  const deleteRecord = async (record: IExecutionResult) => {
+    setIsLoading(true);
+    try {
+      await http.delete(`${EXECUTIONS_V1}/${record.id}`);
+      loadData();
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const loadDataDebounce = debounce(loadData, 300);
 
   useEffect(() => {
@@ -70,7 +80,7 @@ const useRecords = () => {
 
   return {
     state: { filter, pageInfo, order, records, isLoading },
-    actions: { setFilter, setPageInfo, setOrder },
+    actions: { setFilter, setPageInfo, setOrder, deleteRecord },
   };
 };
 
