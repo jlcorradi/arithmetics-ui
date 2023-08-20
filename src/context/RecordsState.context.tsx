@@ -30,9 +30,9 @@ const EXECUTIONS_V1 = "/api/v1/executions";
 
 const useRecords = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [filter, setFilter] = useState<RecordFilter>(
-    {} as unknown as RecordFilter
-  );
+  const [filter, setFilter] = useState<RecordFilter>({
+    description: "",
+  } as unknown as RecordFilter);
   const [pageInfo, setPageInfo] = useState<PageInfo>({ page: 0, pageSize: 10 });
   const [order, setOrder] = useState("date:DESC");
   const [records, setRecords] = useState<PageResponse>({

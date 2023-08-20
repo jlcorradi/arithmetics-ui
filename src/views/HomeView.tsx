@@ -12,18 +12,20 @@ export function HomeView() {
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="text-center">
           <h1>Hello, user!</h1>
-          <p>
-            Your current credit is{" "}
-            <strong className="text-primary">${userData?.userBalance}</strong>.
-          </p>
-          <p>
+          <div className="col-md-12">
+            <p>
+              Your current credit is{" "}
+              <strong className="text-primary">${userData?.userBalance}</strong>
+            </p>
+          </div>
+          <div className="col-md-12 mt-2">
             <PurchaseBalance></PurchaseBalance>
-          </p>
-          <p>
+          </div>
+          <div className="col-md-12 mt-2">
             <NavLink className="btn btn-success" to="/operations">
               Execute Operation
             </NavLink>
-          </p>
+          </div>
         </div>
       </div>
     );

@@ -29,7 +29,7 @@ export function PurchaseBalance() {
 
       <Dropdown.Menu>
         {amounts.map((a) => (
-          <Dropdown.Item onClick={() => purchase(a)}>
+          <Dropdown.Item key={a} onClick={() => purchase(a)}>
             Purchase ${a}
           </Dropdown.Item>
         ))}
