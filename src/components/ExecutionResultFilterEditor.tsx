@@ -10,6 +10,8 @@ export function ExecutionResultFilterEditor() {
     actions: { setFilter },
   } = useRecordsContext();
 
+  const [dateIni, setDateIni] = useState("");
+  const [dateEnd, setDateEnd] = useState("");
   const [description, setDescription] = useState(filter.description);
 
   const { debounce } = useDebounce();
@@ -25,20 +27,23 @@ export function ExecutionResultFilterEditor() {
               placeholder="From Date"
               className="me-2"
               aria-label="dateIni"
-              value={moment(filter.dateIni).format("YYYY-MM-DD")}
-              onChange={(e) =>
-                setFilter({ ...filter, dateIni: new Date(e.target.value) })
-              }
+              datatype="date"
+              value={dateIni}
+              onChange={(e) => {
+                setDateIni(e.target.value);
+                setFilter({ ...filter, dateIni: new Date(e.target.value) });
+              }}
             />
             <Form.Control
               type="date"
               placeholder="From Date"
               className="me-2"
               aria-label="dateEnd"
-              value={moment(filter.dateEnd).format("YYYY-MM-DD")}
-              onChange={(e) =>
-                setFilter({ ...filter, dateEnd: new Date(e.target.value) })
-              }
+              value={dateEnd}
+              onChange={(e) => {
+                setDateEnd(e.target.value);
+                setFilter({ ...filter, dateEnd: new Date(e.target.value) });
+              }}
             />
             <Form.Control
               type="text"
@@ -48,7 +53,10 @@ export function ExecutionResultFilterEditor() {
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
-                debounce(() => setFilter({...filter, description: e.target.value}), 900)();
+                debounce(
+                  () => setFilter({ ...filter, description: e.target.value }),
+                  900
+                )();
               }}
             />
           </Form>
