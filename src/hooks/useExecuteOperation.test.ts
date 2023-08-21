@@ -16,7 +16,7 @@ jest.mock("../context/GlobalState.context", () => ({
 
 describe("useExecuteOperation", () => {
   it("should execute operation and update executionResult", async () => {
-    // Mocking http.post implementation
+    // @ts-ignore
     http.post.mockResolvedValue({
       data: {
         id: 34,
@@ -29,6 +29,7 @@ describe("useExecuteOperation", () => {
     });
 
     // Mocking useGlobalState hook
+    // @ts-ignore
     useGlobalState.mockReturnValue({
       actions: { updateUserData: jest.fn() },
     });
@@ -62,10 +63,10 @@ describe("useExecuteOperation", () => {
   });
 
   it("should set busy to false on catch", async () => {
-    // Mocking http.post implementation to throw an error
+    // @ts-ignore
     http.post.mockRejectedValue(new Error("Test error"));
 
-    // Mocking useGlobalState hook
+    // @ts-ignore
     useGlobalState.mockReturnValue({
       actions: { updateUserData: jest.fn() },
     });
