@@ -35,7 +35,7 @@ export default function OperationDropbox(props: IOperationDropboxProps) {
       <option>Select Operation</option>
       {operations.map((op) => (
         <option key={op.operationType} value={op.operationType}>
-          {op.description}
+          {op.description} - ${op.cost}
         </option>
       ))}
     </Form.Select>
