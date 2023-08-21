@@ -54,7 +54,7 @@ export function ExecutionResultTable() {
           {records.content.map((record) => (
             <tr key={record.id}>
               <th scope="row">{record.id}</th>
-              <td>{moment(record.date).fromNow()}</td>
+              <td>{moment(record.date).format("MM/DD H:mm")}</td>
               <td>{record.description}</td>
               <td>{record.result}</td>
               <td>${record.price}</td>
