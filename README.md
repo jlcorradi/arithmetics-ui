@@ -3,6 +3,8 @@
 This project entails the development of a straightforward application. It has been created as part of an assignment for
 the role of Java Developer at an undisclosed company.
 
+You can access the live version at: http://arithmetics.codigo200.com.br
+
 ## To improve
 
 - i18n - Support for multiple languages
