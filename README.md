@@ -28,7 +28,7 @@ The central idea revolves around crafting a platform dedicated to providing fund
 
 Make sure you have the backend (arithmetics) running locally before you run the ui.
 
-if the backend is running on a URL other then http://localhost:8080 you need to adjust the file ```setupProsy.js``` to 
+if the backend is running on a URL other then http://localhost:8080 you need to adjust the file ```setupProxy.js``` to 
 proxy the requests to the correct URL.
 
 Install the app dependencies: `npm install`
